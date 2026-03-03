@@ -612,6 +612,19 @@ footer h3 {
     </div>
 </nav>
 
+<script>
+function toggleSub(id) {
+    const element = document.getElementById(id);
+    const arrow = element.previousElementSibling.querySelector('.fa-chevron-down');
+    
+    element.classList.toggle('hidden');
+    
+    if (arrow) {
+        arrow.classList.toggle('rotate-180');
+    }
+}
+</script>
+
 <section class="drawing-services-page py-16 bg-[#F8FAFC] font-['Prompt']">
     <div class="max-w-6xl mx-auto px-6">
         
@@ -758,30 +771,40 @@ function updatePreview(source) {
 <div class="max-w-6xl mx-auto px-6 mb-20">
     <div class="flex flex-col md:flex-row gap-4 justify-between border-t border-gray-200 pt-10">
         
-        <a href="oil.html" class="group flex items-center gap-4 p-4 rounded-2xl border border-gray-200 hover:border-[#3B82F6] hover:bg-white transition-all duration-300 md:w-1/2">
+        <a href="coor.html" class="group flex items-center gap-4 p-4 rounded-2xl border border-gray-200 hover:border-[#3B82F6] hover:bg-white transition-all duration-300 md:w-1/2">
             <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-[#3B82F6] group-hover:text-white transition-colors">
                 <i class="fas fa-arrow-left"></i>
             </div>
             <div>
-                <p class="text-xs text-gray-400 uppercase tracking-widest">ย้อนกลับ</p>
-                <h4 class="font-bold text-[#1E293B]">ตรวจสอบน้ำมัน</h4>
+                <p class="text-xs text-gray-400 uppercase tracking-widest">
+                    <span class="lang-th">ย้อนกลับ</span><span class="lang-en hidden">Previous</span>
+                </p>
+                <h4 class="font-bold text-[#1E293B]">
+                    <span class="lang-th">ตรวจสอบน้ำมันเชื้อเพลิง</span>
+                    <span class="lang-en hidden">Fuel Oil Inspection</span>
+                </h4>
             </div>
         </a>
 
-        <a href="ndt.html" class="group flex items-center justify-between p-4 rounded-2xl border border-gray-200 hover:border-[#3B82F6] hover:bg-white transition-all duration-300 md:w-1/2 text-right">
+        <a href="ng.html" class="group flex items-center justify-between p-4 rounded-2xl border border-gray-200 hover:border-[#3B82F6] hover:bg-white transition-all duration-300 md:w-1/2 text-right">
             <div class="ml-auto flex items-center gap-4">
                 <div>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">หน้าถัดไป</p>
-                    <h4 class="font-bold text-[#1E293B]">งานตรวจสอบแบบไม่ทำลาย</h4>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">
+                        <span class="lang-th">หน้าถัดไป</span><span class="lang-en hidden">Next</span>
+                    </p>
+                    <h4 class="font-bold text-[#1E293B]">
+                        <span class="lang-th">งานตรวจสอบแบบไม่ทำลาย</span>
+                        <span class="lang-en hidden">Non-Destructive Testing(NDT)</span>
+                    </h4>
                 </div>
                 <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-[#3B82F6] group-hover:text-white transition-colors">
                     <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </a>
-
     </div>
 </div>
+
 
 <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end space-y-4 group">
     

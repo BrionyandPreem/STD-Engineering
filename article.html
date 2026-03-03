@@ -618,6 +618,18 @@ footer h3 {
     </div>
 </nav>
 	
+<script>
+function toggleSub(id) {
+    const element = document.getElementById(id);
+    const arrow = element.previousElementSibling.querySelector('.fa-chevron-down');
+    
+    element.classList.toggle('hidden');
+    
+    if (arrow) {
+        arrow.classList.toggle('rotate-180');
+    }
+}
+</script>
 	
 <section class="relative py-20 bg-[#14183d] text-white">
     <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-down">

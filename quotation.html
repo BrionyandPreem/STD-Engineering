@@ -149,35 +149,32 @@ footer h3 {
     font-size: 0.85rem;
 }
 
-/* 1. หัวข้อกลุ่มในเมนูย่อย - ปรับให้ตัวเล็กลงและดูโปร่งขึ้น */
 .sub-header {
     padding: 10px 15px;
     font-size: 0.75rem;
-    color: #2DD4BF; /* สีเขียว Teal ละมุนๆ */
+    color: #2DD4BF;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background: rgba(45, 212, 191, 0.05); /* พื้นหลังจางๆ ให้ดูมีเลเยอร์ */
+    background: rgba(45, 212, 191, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 2. เมนูย่อยที่กางออกมา - ปรับให้เป็นกระจกฝ้าโค้งมน */
 .sub-dropdown {
     position: absolute;
     left: 100%; 
     top: 0;
-    background: rgba(15, 23, 42, 0.9); /* สีน้ำเงินเข้มแบบโปร่งแสง */
-    backdrop-filter: blur(12px); /* เอฟเฟกต์กระจกฝ้า ทำให้ดูนุ่มนวล */
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
     min-width: 260px;
-    border-radius: 15px; /* เพิ่มความโค้งมนให้ดูละมุนขึ้น */
-    border: 1px solid rgba(45, 212, 191, 0.2); /* ขอบจางๆ ไม่แข็ง */
+    border-radius: 15px;
+    border: 1px solid rgba(45, 212, 191, 0.2);
     display: none;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    overflow: hidden; /* เพื่อให้พื้นหลัง sub-header ไม่ทะลุขอบโค้ง */
-    margin-left: 5px; /* เว้นระยะห่างจากเมนูหลักนิดหน่อย */
+    overflow: hidden;
+    margin-left: 5px;
 }
 
-/* 3. รายการข้างในเมนูย่อย */
 .sub-dropdown a {
     padding: 12px 18px;
     font-size: 0.9rem;
@@ -190,20 +187,18 @@ footer h3 {
 .sub-dropdown a:hover {
     background: rgba(45, 212, 191, 0.1);
     color: #2DD4BF;
-    padding-left: 22px; /* เพิ่มลูกเล่นขยับนิดๆ เวลาเอาเมาส์ชี้ */
+    padding-left: 22px;
 }
 
-/* 4. รายการหลักที่มีเมนูย่อย */
 .sub-menu {
     position: relative;
 }
 
 .sub-menu:hover .sub-dropdown {
     display: block;
-    animation: fadeIn 0.2s ease-out; /* เพิ่มแอนิเมชันตอนปรากฏ */
+    animation: fadeIn 0.2s ease-out;
 }
 
-/* 5. ลูกศรขวา - ปรับให้จางลงไม่แย่งสายตา */
 .float-right {
     float: right;
     font-size: 0.65rem;
@@ -211,7 +206,6 @@ footer h3 {
     margin-top: 4px;
 }
 
-/* แอนิเมชันตอนเปิดเมนู */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateX(5px); }
     to { opacity: 1; transform: translateX(0); }
@@ -618,6 +612,19 @@ footer h3 {
     </div>
 </nav>
 
+<script>
+function toggleSub(id) {
+    const element = document.getElementById(id);
+    const arrow = element.previousElementSibling.querySelector('.fa-chevron-down');
+    
+    element.classList.toggle('hidden');
+    
+    if (arrow) {
+        arrow.classList.toggle('rotate-180');
+    }
+}
+</script>
+
 <section class="bg-[#14183d] py-20 text-white text-center font-['Prompt']">
     <div data-aos="fade-down">
         <h1 class="text-[#4FA3D1] font-bold tracking-widest mb-4 uppercase text-sm">Get a Quote</h1>
@@ -635,7 +642,7 @@ footer h3 {
 <section class="max-w-5xl mx-auto py-20 px-6 font-['Prompt']">
     <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-gray-100 -mt-32 relative z-20" data-aos="fade-up">
         <form action="save_data.php" method="POST" class="space-y-10">
-            
+
             <div>
                 <h3 class="text-xl font-bold text-[#0A1F33] mb-6 flex items-center">
                     <span class="w-1 h-6 bg-[#4FA3D1] mr-3"></span> 
@@ -772,8 +779,8 @@ footer h3 {
 
         <div class="space-y-2">
             <label class="text-sm font-semibold text-gray-700">
-                <span class="lang-th">นิคมอุตสาหกรรม (ถ้ามี)</span>
-                <span class="lang-en hidden">Industrial Estate (If any)</span>
+                <span class="lang-th">นิคมอุตสาหกรรม </span>
+                <span class="lang-en hidden">Industrial Estate</span>
             </label>
             <input type="text" name="industrial_estate" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4FA3D1] outline-none transition" placeholder="เช่น อมตะซิตี้, ปิ่นทอง / e.g., Amata City, Pinthong">
         </div>
