@@ -151,35 +151,32 @@ footer h3 {
     font-size: 0.85rem;
 }
 
-/* 1. หัวข้อกลุ่มในเมนูย่อย - ปรับให้ตัวเล็กลงและดูโปร่งขึ้น */
 .sub-header {
     padding: 10px 15px;
     font-size: 0.75rem;
-    color: #2DD4BF; /* สีเขียว Teal ละมุนๆ */
+    color: #2DD4BF; 
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background: rgba(45, 212, 191, 0.05); /* พื้นหลังจางๆ ให้ดูมีเลเยอร์ */
+    background: rgba(45, 212, 191, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 2. เมนูย่อยที่กางออกมา - ปรับให้เป็นกระจกฝ้าโค้งมน */
 .sub-dropdown {
     position: absolute;
     left: 100%; 
     top: 0;
-    background: rgba(15, 23, 42, 0.9); /* สีน้ำเงินเข้มแบบโปร่งแสง */
-    backdrop-filter: blur(12px); /* เอฟเฟกต์กระจกฝ้า ทำให้ดูนุ่มนวล */
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
     min-width: 260px;
-    border-radius: 15px; /* เพิ่มความโค้งมนให้ดูละมุนขึ้น */
-    border: 1px solid rgba(45, 212, 191, 0.2); /* ขอบจางๆ ไม่แข็ง */
+    border-radius: 15px; 
+    border: 1px solid rgba(45, 212, 191, 0.2); 
     display: none;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    overflow: hidden; /* เพื่อให้พื้นหลัง sub-header ไม่ทะลุขอบโค้ง */
-    margin-left: 5px; /* เว้นระยะห่างจากเมนูหลักนิดหน่อย */
+    overflow: hidden; 
+    margin-left: 5px;
 }
 
-/* 3. รายการข้างในเมนูย่อย */
 .sub-dropdown a {
     padding: 12px 18px;
     font-size: 0.9rem;
@@ -192,20 +189,18 @@ footer h3 {
 .sub-dropdown a:hover {
     background: rgba(45, 212, 191, 0.1);
     color: #2DD4BF;
-    padding-left: 22px; /* เพิ่มลูกเล่นขยับนิดๆ เวลาเอาเมาส์ชี้ */
+    padding-left: 22px; 
 }
 
-/* 4. รายการหลักที่มีเมนูย่อย */
 .sub-menu {
     position: relative;
 }
 
 .sub-menu:hover .sub-dropdown {
     display: block;
-    animation: fadeIn 0.2s ease-out; /* เพิ่มแอนิเมชันตอนปรากฏ */
+    animation: fadeIn 0.2s ease-out;
 }
 
-/* 5. ลูกศรขวา - ปรับให้จางลงไม่แย่งสายตา */
 .float-right {
     float: right;
     font-size: 0.65rem;
@@ -213,7 +208,6 @@ footer h3 {
     margin-top: 4px;
 }
 
-/* แอนิเมชันตอนเปิดเมนู */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateX(5px); }
     to { opacity: 1; transform: translateX(0); }
@@ -617,9 +611,21 @@ footer h3 {
         </div>
     </div>
 </div>
-    </div>
+</div>
 </nav>
 
+<script>
+function toggleSub(id) {
+    const element = document.getElementById(id);
+    const arrow = element.previousElementSibling.querySelector('.fa-chevron-down');
+    
+    element.classList.toggle('hidden');
+    
+    if (arrow) {
+        arrow.classList.toggle('rotate-180');
+    }
+}
+</script>
 
 <section class="relative h-screen w-full overflow-hidden flex items-center justify-center text-center text-white px-4">
     <div class="absolute inset-0 z-0">
@@ -657,7 +663,6 @@ footer h3 {
 </section>
 
 <style>
-/* ตั้งค่าพื้นฐานให้รูปทุกรูปซ้อนทับกัน */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -670,14 +675,12 @@ footer h3 {
     z-index: 0;
 }
 
-/* เมื่อรูป Active ให้ลอยขึ้นมาและเริ่มซูม */
 .hero-slide.active {
     opacity: 1;
-    z-index: 1; /* ให้รูปที่กำลังโชว์อยู่ข้างบน */
+    z-index: 1;
     animation: kenBurnsContinuous 5s linear forwards;
 }
 
-/* แอนิเมชันซูมเข้าช้าๆ แบบนุ่มนวลที่สุด */
 @keyframes kenBurnsContinuous {
     from { transform: scale(1.05); }
     to { transform: scale(1.2); }
@@ -687,17 +690,14 @@ footer h3 {
 <script>
 let slideIndex = 1;
 const totalSlides = 5;
-const displayTime = 4000; // ปรับเวลาโชว์รูปละ 6 วินาที
+const displayTime = 4000;
 
 function smoothTransition() {
     const slides = document.querySelectorAll('.hero-slide');
     
-    // 1. หา index ของรูปถัดไป
     let nextIndex = slideIndex + 1;
     if (nextIndex > totalSlides) nextIndex = 1;
 
-    // 2. สั่งให้รูปปัจจุบันค่อยๆ จางออก และรูปใหม่จางเข้า (ด้วย CSS Transition)
-    // เราไม่ต้องสั่งซ่อนรูปเก่าทันที ระบบ CSS จะจัดการความนุ่มให้เอง
     slides.forEach(s => s.classList.remove('active'));
     
     const nextSlide = document.getElementById(`slide-${nextIndex}`);
@@ -708,7 +708,6 @@ function smoothTransition() {
     slideIndex = nextIndex;
 }
 
-// เริ่มทำงานวนไปเรื่อยๆ
 setInterval(smoothTransition, displayTime);
 </script>
 
@@ -996,7 +995,7 @@ setInterval(smoothTransition, displayTime);
                         <span class="lang-th">การตรวจสอบก๊าซธรรมชาติ (NG/NGV)</span>
                         <span class="lang-en hidden">Natural Gas (NG/NGV) Inspection</span>
                     </h3>
-                    <a href="ndt.html" class="inline-block bg-red-600 text-white px-8 py-2 rounded-full font-bold hover:bg-[#14183d] transition duration-300 shadow-lg italic">
+                    <a href="ng.html" class="inline-block bg-red-600 text-white px-8 py-2 rounded-full font-bold hover:bg-[#14183d] transition duration-300 shadow-lg italic">
                         <span class="lang-th">ข้อมูลเพิ่มเติม</span>
                         <span class="lang-en hidden">More Info</span>
                     </a>
@@ -1012,7 +1011,7 @@ setInterval(smoothTransition, displayTime);
                         <span class="lang-th">การตรวจสอบน้ำมันเชื้อเพลิง (OIL)</span>
                         <span class="lang-en hidden">Fuel Oil Inspection</span>
                     </h3>
-                    <a href="#" class="inline-block bg-red-600 text-white px-8 py-2 rounded-full font-bold hover:bg-[#14183d] transition duration-300 shadow-lg italic">
+                    <a href="oil.html" class="inline-block bg-red-600 text-white px-8 py-2 rounded-full font-bold hover:bg-[#14183d] transition duration-300 shadow-lg italic">
                         <span class="lang-th">ข้อมูลเพิ่มเติม</span>
                         <span class="lang-en hidden">More Info</span>
                     </a>
@@ -1024,9 +1023,9 @@ setInterval(smoothTransition, displayTime);
 
 <script>
   var swiper = new Swiper(".logoSwiper", {
-    slidesPerView: 2, // มือถือโชว์ 2 โลโก้
+    slidesPerView: 2,
     spaceBetween: 30,
-    loop: true, // เลื่อนได้ไม่สิ้นสุด
+    loop: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -1040,8 +1039,8 @@ setInterval(smoothTransition, displayTime);
       clickable: true,
     },
     breakpoints: {
-      640: { slidesPerView: 3 }, // แท็บเล็ตโชว์ 3
-      1024: { slidesPerView: 5 }, // คอมพิวเตอร์โชว์ 5
+      640: { slidesPerView: 3 },
+      1024: { slidesPerView: 5 }, 
     },
   });
 </script>
@@ -1104,7 +1103,7 @@ setInterval(smoothTransition, displayTime);
             </div>
         </div>
 
-        <a href="blog.html" class="inline-block bg-red-600 text-white px-10 py-3 rounded-md font-bold hover:bg-[#14183d] transition shadow-lg skew-x-[-10deg]">
+        <a href="article.html" class="inline-block bg-red-600 text-white px-10 py-3 rounded-md font-bold hover:bg-[#14183d] transition shadow-lg skew-x-[-10deg]">
             <span class="inline-block skew-x-[10deg]">
                 <span class="lang-th">อ่านข่าวทั้งหมด</span>
                 <span class="lang-en hidden">Read All News</span>
@@ -1116,7 +1115,7 @@ setInterval(smoothTransition, displayTime);
 <section class="relative bg-[#14183D] text-white overflow-hidden">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 h-80 w-full">
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122" class="w-full h-full object-cover">
+            <img src="about us.jpg" class="w-full h-full object-cover">
         </div>
         
         <div class="md:w-1/2 p-12 relative">
@@ -1233,8 +1232,8 @@ setInterval(smoothTransition, displayTime);
 			Eng@stdengineering-th.com</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-line"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="https://lin.ee/1uwqOVk"><i class="fab fa-line"></i></a>
+                <a href="Contact.html"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </div>
