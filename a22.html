@@ -248,7 +248,7 @@ footer h3 {
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
       <div class="flex items-center space-x-1"> 
-	    <img src="STD 4.jpg" alt="Logo" class="h-12 w-auto object-contain">
+	    <img src="STD 4.png" alt="Logo" class="h-12 w-auto object-contain">
         <div class="leading-none -ml-1">
         <span class="text-[19px] font-semibold block tracking-[0.1em] text-white">
             ENGINEERING <span class="text-[14px] font-light opacity-80">AND</span>
@@ -726,12 +726,22 @@ footer h3 {
                 <span class="lang-th">กลับไปหน้ารวมบทความ</span>
                 <span class="lang-en hidden">Back to All Articles</span>
             </a>
-            <div class="flex gap-4">
-                <span class="text-gray-400 font-medium">SHARE:</span>
-                <a href="#" class="text-blue-600 hover:scale-110 transition"><i class="fab fa-facebook text-2xl"></i></a>
-                <a href="#" class="text-green-500 hover:scale-110 transition"><i class="fab fa-line text-2xl"></i></a>
-            </div>
+
+        <div class="flex gap-4">
+        <span class="text-gray-400 font-medium">SHARE:</span>
+            <a href="javascript:void(0);" 
+            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank', 'width=600,height=400');" 
+            class="text-blue-600 hover:scale-110 transition">
+            <i class="fab fa-facebook text-2xl"></i>
+            </a>
+    
+            <a href="javascript:void(0);" 
+            onclick="window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(window.location.href), '_blank', 'width=600,height=400');" 
+            class="text-green-500 hover:scale-110 transition">
+            <i class="fab fa-line text-2xl"></i>
+            </a>
         </div>
+		</div>
     </article>
 </main>
 
