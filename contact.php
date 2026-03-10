@@ -1,12 +1,11 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	
-    $name = $_POST['name'] ?? '';
-    $company = $_POST['company'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $service = $_POST['service'] ?? '';
-    $message_detail = $_POST['message'] ?? '';
+
+    $name = trim($_POST['name'] ?? '');
+    $company = trim($_POST['company'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $service = trim($_POST['service'] ?? '');
+    $message = trim($_POST['message'] ?? '');
 
     $to = "Info@stdengineering-th.com";
     $subject = "=?UTF-8?B?".base64_encode("มีการติดต่อใหม่จากเว็บไซต์ STD Engineering")."?=";
@@ -34,5 +33,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </script>";
     }
 }
-
 ?>

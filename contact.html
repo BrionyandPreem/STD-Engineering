@@ -693,47 +693,47 @@ function toggleSub(id) {
         <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100" data-aos="fade-left">
             <form action="contact.php" method="POST" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" id="form-name" placeholder="ชื่อ-นามสกุล / Name" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none">
+                    <input type="text" name="name" id="form-name" placeholder="ชื่อ-นามสกุล / Name" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none" required>
                     <input type="text" name="company" id="form-company" placeholder="บริษัท / Company" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none">
                 </div>
-                <input type="email" name="email" id="form-email" placeholder="อีเมลติดต่อ / Email Address" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none">
-                <select name="service" id="form-service" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none text-gray-500">
-    <option value="Services">
+                <input type="email" name="email" id="form-email" placeholder="อีเมลติดต่อ / Email Address" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none" required>
+                <select name="service" id="form-service" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none text-gray-500">
+    <option value="">
         <span class="lang-th">เลือกบริการที่ต้องการสอบถาม</span>
-        <span class="lang-en hidden">Select Service Type</span>
+        <span class="lang-en hidden">/ Select Service Type</span>
     </option>
 
-    <option value="LPG">
+    <option value="ตรวจสอบก๊าซ LPG">
         <span class="lang-th">ตรวจสอบก๊าซ LPG</span>
-        <span class="lang-en hidden">LPG Inspection</span>
+        <span class="lang-en hidden">/ LPG Inspection</span>
     </option>
 
-    <option value="NGV">
+    <option value="ตรวจสอบก๊าซ NG/NGV">
         <span class="lang-th">ตรวจสอบก๊าซ NG/NGV</span>
-        <span class="lang-en hidden">NG/NGV Inspection</span>
+        <span class="lang-en hidden">/ NG/NGV Inspection</span>
     </option>
 
-    <option value="OIL">
+    <option value="ตรวจสอบน้ำมันเชื้อเพลิง">
         <span class="lang-th">ตรวจสอบน้ำมันเชื้อเพลิง</span>
-        <span class="lang-en hidden">Fuel Oil Inspection</span>
+        <span class="lang-en hidden">/ Fuel Oil Inspection</span>
     </option>
 
-    <option value="Drawing">
+    <option value="งานเขียนแบบและคำนวณ">
         <span class="lang-th">งานเขียนแบบและคำนวณ</span>
-        <span class="lang-en hidden">Engineering Drawing & Design</span>
+        <span class="lang-en hidden">/ Engineering Drawing & Design</span>
     </option>
 
-    <option value="NDT">
+    <option value="ตรวจสอบแบบไม่ทำลาย">
         <span class="lang-th">ตรวจสอบแบบไม่ทำลาย</span>
-        <span class="lang-en hidden">Non-Destructive Testing (NDT)</span>
+        <span class="lang-en hidden">/ Non-Destructive Testing (NDT)</span>
     </option>
 
-    <option value="Coordination">
+    <option value="ประสานงานกรมธุรกิจพลังงานและพลังงานจังหวัด">
         <span class="lang-th">ประสานงานกรมธุรกิจพลังงานและพลังงานจังหวัด</span>
-        <span class="lang-en hidden">Energy Dept. Coordination</span>
+        <span class="lang-en hidden">/ Energy Dept. Coordination</span>
     </option>
 </select>
-                <textarea name="message" rows="4" id="form-message" placeholder="รายละเอียดที่ต้องการสอบถาม / Message" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none"></textarea>
+                <textarea name="message" rows="4" id="form-message" placeholder="รายละเอียดที่ต้องการสอบถาม / Message" class="w-full p-3 bg-gray-50 border border-gray-200 rounded focus:border-[#4FA3D1] outline-none" required></textarea>
                 <button type="submit" class="w-full bg-[#14183d] hover:bg-[#1F3B57] text-white font-bold py-4 rounded transition duration-300">
                     <span class="lang-th">ส่งข้อความถึงวิศวกร</span>
                     <span class="lang-en hidden">Submit Inquiry</span>
@@ -848,7 +848,7 @@ function toggleSub(id) {
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2026 STD Engineering & Construction Co.,Ltd. All Rights Reserved.</p>
+        <p>&copy; 2026 STD ENGINEERING AND CONSTRUCTION CO., LTD. All Rights Reserved.</p>
     </div>
 </footer>
 
